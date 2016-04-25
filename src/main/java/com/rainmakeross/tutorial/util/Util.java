@@ -20,15 +20,17 @@ public class Util {
             // assumption3: i.e. type constructs can not occur at the end of a sentence
             if(str.endsWith(".") && !str.substring(0, str.length()-1).contains(".")) {
                 String wordExceptDot = str.substring(0, str.length()-1);
-                if(returnMap.containsKey(wordExceptDot)){
-                    returnMap.put(wordExceptDot, new AnalysisOutput(returnMap.get(wordExceptDot), sentenceCount));
+                AnalysisOutput analysisOutput = returnMap.get(wordExceptDot);
+                if(analysisOutput != null){
+                    returnMap.put(wordExceptDot, new AnalysisOutput(analysisOutput, sentenceCount));
                 } else {
                     returnMap.put(wordExceptDot, new AnalysisOutput(sentenceCount));
                 }
                 sentenceCount++;
             } else {
-                if(returnMap.containsKey(str)){
-                    returnMap.put(str, new AnalysisOutput(returnMap.get(str), sentenceCount));
+                AnalysisOutput analysisOutput = returnMap.get(str);
+                if(analysisOutput != null){
+                    returnMap.put(str, new AnalysisOutput(analysisOutput, sentenceCount));
                 } else {
                     returnMap.put(str, new AnalysisOutput(sentenceCount));
                 }
