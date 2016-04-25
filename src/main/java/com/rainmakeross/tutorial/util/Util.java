@@ -27,10 +27,6 @@ public class Util {
         TreeMap<String, AnalysisOutput> returnMap = new TreeMap<>();
         int sentenceCount = 1;
         for(String str: strArray) {
-            // Must deal with end of a sentence
-            // assumption1: dots are placed at the end of a word with no space in between
-            // assumption2: dots contained within words with dot in the end is okay to be treated as a word like i.e.
-            // assumption3: i.e. type constructs can not occur at the end of a sentence
             if(str.endsWith(".") && !str.substring(0, str.length()-1).contains(".")) {
                 String wordExceptDot = str.substring(0, str.length()-1);
                 AnalysisOutput analysisOutput = returnMap.get(wordExceptDot);
