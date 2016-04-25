@@ -18,6 +18,7 @@ SpaceComplexity: O(n) -- memory utilization is linear with words
 
 ## Known Limitations of Algo
 Explicit Assumptions made
+
 1. dots are placed at the end of a word with no space in between
 2. dots contained within words with dot in the end is okay to be treated as a word like i.e.
 3. i.e. type constructs can not occur at the end of a sentence
