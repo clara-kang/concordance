@@ -3,6 +3,9 @@ language: java
 jdk:
   - oraclejdk8
 
+install:
+  - gradle assemble
+
 script:
-  - ./gradlew test
-  - ./gradlew jmh
+  - gradle test
+  - gradle jmh
