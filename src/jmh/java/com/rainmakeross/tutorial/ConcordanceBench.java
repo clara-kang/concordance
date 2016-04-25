@@ -3,7 +3,6 @@ package com.rainmakeross.tutorial;
 
 import com.rainmakeross.tutorial.util.Util;
 import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.State;
 
 public class ConcordanceBench {
 
@@ -14,7 +13,7 @@ public class ConcordanceBench {
                 "Bonus: label each word with the sentence numbers in which each occurrence appeared.";
 
         String[] wordArr = Util.sanitizeArray(Util.removeNonAlpha(trialStr));
-        Util.populateWordList(wordArr);
+        Util.populateWordSet(wordArr);
     }
 
     @Benchmark
@@ -24,6 +23,6 @@ public class ConcordanceBench {
                 "Bonus: label each word with the sentence numbers in which each occurrence appeared.";
 
         String[] wordArrDouble = Util.sanitizeArray(Util.removeNonAlpha(trialStr+ " "+ trialStr));
-        Util.populateWordList(wordArrDouble);
+        Util.populateWordSet(wordArrDouble);
     }
 }

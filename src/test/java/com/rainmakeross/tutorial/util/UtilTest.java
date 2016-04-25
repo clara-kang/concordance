@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-
 public class UtilTest {
     String trialStr = "Apple is a great company!!!.";
     String noNonAlphaTrialStr = "Apple is a great company.";
@@ -21,7 +20,7 @@ public class UtilTest {
     @Test
     public void fullRun() throws Exception {
         String[] wordArr2 = Util.sanitizeArray(Util.removeNonAlpha(trialStr2));
-        assertEquals(Util.populateWordList(wordArr2).toString(), resultStr);
+        assertEquals(Util.populateWordSet(wordArr2).toString(), resultStr);
     }
 
     @Test
@@ -33,11 +32,11 @@ public class UtilTest {
     public void populateWordList() throws Exception {
         String[] wordArr = Util.sanitizeArray(Util.removeNonAlpha(trialStr));
         assertEquals(wordArr.length, 5);
-        assertEquals(Util.populateWordList(wordArr).firstKey(), "a");
+        assertEquals(Util.populateWordSet(wordArr).firstKey(), "a");
 
         String[] wordArr2 = Util.sanitizeArray(Util.removeNonAlpha(trialStr2));
         assertEquals(wordArr2.length, 41);
-        assertEquals(Util.populateWordList(wordArr2).lastKey(), "written");
+        assertEquals(Util.populateWordSet(wordArr2).lastKey(), "written");
     }
 
 }
